@@ -5,6 +5,8 @@ from .models import *
 from .form import *
 
 # Create your views here.
+# Create your views here.
+# Create your views here.
 def home(request):
     tasks = Task.objects.all()
 
