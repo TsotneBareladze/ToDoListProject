@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+
+<center>
+        {% if searched %}
+
+        <h1>Your Seached For...{{searched}}</h1>
+    <br/>
+        <div class="container">
+        <div class="row" class="md-4" class="bg-4"  class="sm-12">
+            {% for task in tasks %}
+            <div class="card" style="width: 18rem;  margin: 1rem ">
+            <div class="card-body">
+                <h5 class="card-title">{{task.title}}</h5>
+                <p class="card-text">{{task.desc}}</p>
+                  <h6 class="card-subtitle mb-2 text-muted">{{task.create}}</h6>
+                <a href="{% url 'update_task' task.id %}" class="card-link">Edit</a>
+                <a href="{% url 'delete_task' task.id %}" class="card-link">Delete</a>
+            </div>
+                </div>
+            {% endfor %}
+        </div>
+        </div>
+        {% else %}
+            <h1>Your Forgot To Seach For Venue...</h1>
+        {% endif %}
+
+</center>
+
+
+  {% endblock %}

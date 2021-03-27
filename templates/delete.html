@@ -1,0 +1,8 @@
+<div class="container">
+    <a> Deleting "<spam style="color: red;">{{item}}</spam>" is parament... do you want to proceed ?</a>
+    <a class="btn btn-sm btn-success myButton" href="{% url 'home' %}">No</a>
+    <form method="Post" action="">
+        {% csrf_token %}
+        <input class="btn btn-sm btn-danger" type="submit" value="Yes Delete" name="Yes">
+    </form>
+</div>
